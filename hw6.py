@@ -111,6 +111,7 @@ print("\n\n***** Problem 5 *****")
 ## use the student_tups_list
 programmers = [Student(item[0]) for item in student_tups_list]
 
+
 for item in student_tups_list:
     print(item[1])
 # for item in programmers:
@@ -147,7 +148,7 @@ names_and_productivities = list(zip(names, prod_list))
 ## each tuple has student name and productivity value (stored in prod_list)
 ##list comprehension and zip
 
-
+## help with list comprehension
 
 ## But be careful that if you use answers from previous problems, you use the LISTs you generated, so that all your tests can still pass and you avoid confusion!
 
@@ -157,7 +158,7 @@ names_and_productivities = list(zip(names, prod_list))
 print("\n\n***** Problem 8 *****")
 # Use the Python filter function to select the subset of programmers who have names with 5 or more characters. (i.e. ["Albert","Dinesh","Euijin"]) Your result should be an filter object that points to Student instances. Save that filter iterator in a variable called long_names.
 
-
+long_names = filter(lambda num: len(num[0]) <5, student_tups_list)
 
 ## Then write code to cast the value of long_names to a list and save it in the variable long_names_list. 
 
