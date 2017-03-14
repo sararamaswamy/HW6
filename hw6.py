@@ -111,8 +111,8 @@ print("\n\n***** Problem 5 *****")
 ## use the student_tups_list
 programmers = [Student(item[0]) for item in student_tups_list]
 
-for item in programmers:
-    print(item.name)
+for item in student_tups_list:
+    print(item[1])
 # for item in programmers:
 #     print(item)
     ##print(item) and print(item.name) are printing the same list . . . 
@@ -124,9 +124,11 @@ print("\n\n***** Problem 6 *****")
 
 # Use the Python map function on the programmers list you just created, in order to create an map instance iterator of numbers representing the productivity of each student. Save the map iterator in a variable called prod_iter.
 
-prod_iter = map(lambda x: x.num_programs%x.years_UM, programmers)
+prod_iter = map(lambda x: x[2]/x[1], student_tups_list)
 ## Write code to cast that iterator to a list. Save that list in the variable prod_list.
-# print(list(prod_iter))
+prod_list = []
+for item in prod_iter:
+    prod_list.append(item)
 
 ## You may add a method to the Student class if you wish in order to do this, but you do not need to. (If you do, make sure you do not create any syntax errors that keep code/tests from running!)
 
@@ -134,7 +136,18 @@ prod_iter = map(lambda x: x.num_programs%x.years_UM, programmers)
 
 ## [PROBLEM 7]
 print("\n\n***** Problem 7 *****")
-# Create a list of tuples wherein each tuple has a student's name and productivity value. Save the list of tuples in a variable called names_and_productivities. To do this, you should use a list comprehension (you may also use the zip function, and you may use any variables you have already created).
+# Create a list of tuples called names_and_productvitites wherein each tuple has a student's name and productivity value. Save the list of tuples in a variable called names_and_productivities. To do this, you should use a list comprehension (you may also use the zip function, and you may use any variables you have already created).
+## list of tuples
+names = []
+for item in student_tups_list:
+    names.append(item[0])
+print(names)
+print(prod_list)
+names_and_productivities = list(zip(names, prod_list))
+## each tuple has student name and productivity value (stored in prod_list)
+##list comprehension and zip
+
+
 
 ## But be careful that if you use answers from previous problems, you use the LISTs you generated, so that all your tests can still pass and you avoid confusion!
 
